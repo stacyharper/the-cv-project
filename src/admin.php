@@ -108,7 +108,7 @@ if (!empty($_POST)) {
         <input required name="category" type="hidden" value="hobby"></input>
         Titre: <input required name="title" type="text"></input><br />
         Date de début: <input required name="beginningDate" type="text"></input><br />
-        Description: <input required name="description" type="text"></input><br />
+        Description: <textarea required name="description" cols="50" rows="10"></textarea><br />
         <input type="submit" value="Ajouter"></input>
     </form>
 
@@ -142,7 +142,7 @@ if (!empty($_POST)) {
         Lieu: <input required name="location" type="text"></input><br />
         Date de début: <input required name="beginningDate" type="text"></input><br />
         Date de fin: <input required name="endingDate" type="text"></input><br />
-        Description: <input required name="description" type="text"></input><br />
+        Description: <textarea required name="description" cols="50" rows="10"></textarea><br />
         <input type="submit" value="Ajouter"></input>
     </form>
 
@@ -175,8 +175,7 @@ if (!empty($_POST)) {
         Lieu: <input required name="location" type="text"></input><br />
         Date de début: <input required name="beginningDate" type="date"></input><br />
         Date de fin: <input required name="endingDate" type="date"></input><br />
-        Description: <input required name="description" type="text"></input><br />
-        <input type="submit" value="Ajouter"></input>
+        Description: <textarea required name="description" cols="50" rows="10"></textarea><br />
     </form>
 </body>
 </html>
