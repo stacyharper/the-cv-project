@@ -24,10 +24,10 @@ if (!empty($_POST)) {
                     'description' => $_POST['description'],
                     'location' => $_POST['location'],
                     'beginningDate' => $_POST['beginningDate'],
-                    'endingDate' => $_POST['endingDate']
+                    'endingDate' => $_POST['endingDate'],
                 ));
             } elseif (!empty($_POST['id'])) {
-                $bdd->exec('DELETE FROM schooling WHERE id = '. $_POST['id']);
+                $bdd->exec('DELETE FROM schooling WHERE id = '.$_POST['id']);
             }
         } elseif ('experience' === $_POST['category']) {
             if (
@@ -46,10 +46,10 @@ if (!empty($_POST)) {
                     'companyName' => $_POST['companyName'],
                     'beginningDate' => $_POST['beginningDate'],
                     'endingDate' => $_POST['endingDate'],
-                    'location' => $_POST['location']
+                    'location' => $_POST['location'],
                 ));
             } elseif (!empty($_POST['id'])) {
-                $bdd->exec('DELETE FROM experience WHERE id = '. $_POST['id']);
+                $bdd->exec('DELETE FROM experience WHERE id = '.$_POST['id']);
             }
         } elseif ('hobby' === $_POST['category']) {
             if (
@@ -62,10 +62,10 @@ if (!empty($_POST)) {
                 $req->execute(array(
                     'title' => $_POST['title'],
                     'description' => $_POST['description'],
-                    'beginningDate' => $_POST['beginningDate']
+                    'beginningDate' => $_POST['beginningDate'],
                 ));
             } elseif (!empty($_POST['id'])) {
-                $bdd->exec('DELETE FROM hobby WHERE id = '. $_POST['id']);
+                $bdd->exec('DELETE FROM hobby WHERE id = '.$_POST['id']);
             }
         }
     }
@@ -90,12 +90,12 @@ if (!empty($_POST)) {
         if ($rows) {
             foreach ($rows as $row) {
                 echo '<li>';
-                echo '<h3>' . $row['title'] . '</h3>';
-                echo '<p>' . $row['beginningDate'] . '</p>';
-                echo '<p>' . $row['description'] . '</p>';
+                echo '<h3>'.$row['title'].'</h3>';
+                echo '<p>'.$row['beginningDate'].'</p>';
+                echo '<p>'.$row['description'].'</p>';
                 echo '<form method="post">';
                 echo '<input required name="category" type="hidden" value="hobby"></input>';
-                echo '<input required name="id" type="hidden" value="' . $row['id'] .'"></input>';
+                echo '<input required name="id" type="hidden" value="'.$row['id'].'"></input>';
                 echo '<input type="submit" value="Supprimer"></input>';
                 echo '</form>';
                 echo '</li>';
@@ -119,14 +119,14 @@ if (!empty($_POST)) {
         if ($rows) {
             foreach ($rows as $row) {
                 echo '<li>';
-                echo '<h3>' . $row['title'] . '</h3>';
-                echo '<p>' . $row['beginningDate'] . ' - ' . $row['endingDate'] . '</p>';
-                echo '<p>' . $row['companyName'] . '</p>';
-                echo '<p>' . $row['location'] . '</p>';
-                echo '<p>' . $row['description'] . '</p>';
+                echo '<h3>'.$row['title'].'</h3>';
+                echo '<p>'.$row['beginningDate'].' - '.$row['endingDate'].'</p>';
+                echo '<p>'.$row['companyName'].'</p>';
+                echo '<p>'.$row['location'].'</p>';
+                echo '<p>'.$row['description'].'</p>';
                 echo '<form method="post">';
                 echo '<input required name="category" type="hidden" value="experience"></input>';
-                echo '<input required name="id" type="hidden" value="' . $row['id'] .'"></input>';
+                echo '<input required name="id" type="hidden" value="'.$row['id'].'"></input>';
                 echo '<input type="submit" value="Supprimer"></input>';
                 echo '</form>';
                 echo '</li>';
@@ -153,14 +153,14 @@ if (!empty($_POST)) {
         if ($rows) {
             foreach ($rows as $row) {
                 echo '<li>';
-                echo '<h3>' . $row['title'] . '</h3>';
-                echo '<p>' . $row['beginningDate'] . ' - ' . $row['endingDate'] . '</p>';
-                echo '<p>' . $row['companyName'] . '</p>';
-                echo '<p>' . $row['location'] . '</p>';
-                echo '<p>' . $row['description'] . '</p>';
+                echo '<h3>'.$row['title'].'</h3>';
+                echo '<p>'.$row['beginningDate'].' - '.$row['endingDate'].'</p>';
+                echo '<p>'.$row['companyName'].'</p>';
+                echo '<p>'.$row['location'].'</p>';
+                echo '<p>'.$row['description'].'</p>';
                 echo '<form method="post">';
                 echo '<input required name="category" type="hidden" value="schooling"></input>';
-                echo '<input required name="id" type="hidden" value="' . $row['id'] .'"></input>';
+                echo '<input required name="id" type="hidden" value="'.$row['id'].'"></input>';
                 echo '<input type="submit" value="Supprimer"></input>';
                 echo '</form>';
                 echo '</li>';

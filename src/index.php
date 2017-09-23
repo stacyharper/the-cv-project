@@ -23,9 +23,9 @@
         if ($rows) {
             foreach ($rows as $row) {
                 echo '<li>';
-                echo '<h3>' . $row['title'] . '</h3>';
-                echo '<p>' . $row['beginningDate'] . '</p>';
-                echo '<p>' . $row['description'] . '</p>';
+                echo '<h3>'.$row['title'].'</h3>';
+                echo '<p>'.$row['beginningDate'].'</p>';
+                echo '<p>'.$row['description'].'</p>';
                 echo '</li>';
             }
         }
@@ -39,11 +39,11 @@
         if ($rows) {
             foreach ($rows as $row) {
                 echo '<li>';
-                echo '<h3>' . $row['title'] . '</h3>';
-                echo '<p>' . $row['beginningDate'] . ' - ' . $row['endingDate'] . '</p>';
-                echo '<p>' . $row['companyName'] . '</p>';
-                echo '<p>' . $row['location'] . '</p>';
-                echo '<p>' . $row['description'] . '</p>';
+                echo '<h3>'.$row['title'].'</h3>';
+                echo '<p>'.$row['beginningDate'].' - '.$row['endingDate'].'</p>';
+                echo '<p>'.$row['companyName'].'</p>';
+                echo '<p>'.$row['location'].'</p>';
+                echo '<p>'.$row['description'].'</p>';
                 echo '</li>';
             }
         }
@@ -57,11 +57,11 @@
         if ($rows) {
             foreach ($rows as $row) {
                 echo '<li>';
-                echo '<h3>' . $row['title'] . '</h3>';
-                echo '<p>' . $row['beginningDate'] . ' - ' . $row['endingDate'] . '</p>';
-                echo '<p>' . $row['companyName'] . '</p>';
-                echo '<p>' . $row['location'] . '</p>';
-                echo '<p>' . $row['description'] . '</p>';
+                echo '<h3>'.$row['title'].'</h3>';
+                echo '<p>'.$row['beginningDate'].' - '.$row['endingDate'].'</p>';
+                echo '<p>'.$row['companyName'].'</p>';
+                echo '<p>'.$row['location'].'</p>';
+                echo '<p>'.$row['description'].'</p>';
                 echo '</li>';
             }
         }
