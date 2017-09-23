@@ -1,0 +1,51 @@
+version: "2"
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: the-cv-project
+    environment:
+      - VIRTUAL_HOST=www.cv.eddiebarraco.fr,cv.eddiebarraco.fr
+      - LETSENCRYPT_HOST=www.cv.eddiebarraco.fr,cv.eddiebarraco.fr
+      - LETSENCRYPT_EMAIL=eddiebarraco@live.fr
+      - PHP_CONTAINER_NAME=the-cv-project
+    volumes_from:
+      - php
+    volumes:
+      - ./docker/conf/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./docker/conf/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./docker/conf/nginx/.htpasswd:/etc/nginx/.htpasswd
+  php:
+    image: the-cv-projet/php:7.1-fpm
+    container_name: the-cv-project-php
+    build:
+      context: docker/build/php
+    depends_on:
+      - mysql
+    volumes:
+      - ./src:/var/www/html/web
+
+  mysql:
+    image: mysql:8.0
+    container_name: the-cv-project-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=toor
+      - MYSQL_USER=cv
+      - MYSQL_DATABASE=cv
+      - MYSQL_PASSWORD=cv
+    volumes:
+      - /home/docker/the-cv-project/mysql:/var/lib/mysql
+
+  adminer:
+    image: clue/adminer
+    container_name: the-cv-project-adminer
+    environment:
+      - VIRTUAL_HOST=adminer.cv.eddiebarraco.fr
+    depends_on:
+      - mysql
+
+networks:
+
+  default:
+    external:
+      name: public
